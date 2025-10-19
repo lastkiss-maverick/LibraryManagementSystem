@@ -6,7 +6,6 @@ public abstract class Book {
     private boolean isIssued;
     private int daysLate;
 
-    // Constructor
     public Book(String title, String author, String isbn) {
         this.title = title;
         this.author = author;
@@ -15,7 +14,7 @@ public abstract class Book {
         this.daysLate = 0;
     }
 
-    // Getters and Setters
+
     public String getTitle() {
         return title;
     }
@@ -63,13 +62,13 @@ public abstract class Book {
         System.out.println("Status: " + (isIssued ? "Issued" : "Available"));
     }
 
-    // NEW: Method for GUI display in list
+
     public String getDisplayText() {
         String status = isIssued ? "Issued" : "Available";
         return title + " - " + author + " [" + status + "]";
     }
 
-    // NEW: Method to get detailed info for GUI
+
     public String getDetailedInfo() {
         StringBuilder info = new StringBuilder();
         info.append("Title: ").append(title).append("\n");

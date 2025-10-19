@@ -65,12 +65,12 @@ public class LibraryManager {
         }
     }
 
-    // NEW: Get all books for GUI display
+
     public List<Book> getAllBooks() {
         return books;
     }
 
-    // NEW: Find book by ISBN
+
     public Book findBookByISBN(String isbn) {
         for (Book book : books) {
             if (book.getIsbn().equals(isbn)) {
@@ -80,7 +80,7 @@ public class LibraryManager {
         return null;
     }
 
-    // NEW: Get available books only
+
     public List<Book> getAvailableBooks() {
         List<Book> available = new ArrayList<>();
         for (Book book : books) {
@@ -91,7 +91,7 @@ public class LibraryManager {
         return available;
     }
 
-    // NEW: Get issued books only
+
     public List<Book> getIssuedBooks() {
         List<Book> issued = new ArrayList<>();
         for (Book book : books) {

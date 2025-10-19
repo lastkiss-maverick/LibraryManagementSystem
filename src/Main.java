@@ -2,7 +2,7 @@ public class Main {
     public static void main(String[] args) {
         System.out.println("=== Library Management System ===\n");
 
-        // Create library manager
+
         LibraryManager library = new LibraryManager();
 
         // Add books

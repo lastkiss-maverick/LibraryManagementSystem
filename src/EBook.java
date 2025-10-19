@@ -2,14 +2,14 @@ public class EBook extends Book {
     private double fileSize; // in MB
     private String format; // PDF, EPUB, etc.
 
-    // Constructor
+
     public EBook(String title, String author, String isbn, double fileSize, String format) {
         super(title, author, isbn);
         this.fileSize = fileSize;
         this.format = format;
     }
 
-    // Getters
+
     public double getFileSize() {
         return fileSize;
     }
@@ -18,7 +18,7 @@ public class EBook extends Book {
         return format;
     }
 
-    // Override calculateLateFee - EBooks have lower late fees
+    // EBooks have lower late fees
     @Override
     public double calculateLateFee() {
         // EBooks charge $0.50 per day late
@@ -34,7 +34,7 @@ public class EBook extends Book {
         System.out.println("Format: " + format);
     }
 
-    // NEW: Override for GUI detailed info
+
     @Override
     public String getDetailedInfo() {
         StringBuilder info = new StringBuilder();

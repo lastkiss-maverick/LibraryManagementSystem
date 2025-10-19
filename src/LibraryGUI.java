@@ -11,9 +11,9 @@ public class LibraryGUI extends JFrame {
 
     public LibraryGUI() {
         libraryManager = new LibraryManager();
-        setupGUI();
-        loadSampleData();
-        refreshBookList();
+        loadSampleData();          // Make sure books are loaded FIRST
+        setupGUI();                // Build the GUI layout
+        refreshBookList();         // Update the book list immediately
     }
 
     private void setupGUI() {
@@ -75,7 +75,7 @@ public class LibraryGUI extends JFrame {
 
         // Book List
         JPanel listPanel = new JPanel(new BorderLayout());
-        listPanel.setBackground(Color.WHITE);
+        listPanel.setBackground(Color.BLACK);
         listPanel.setBorder(BorderFactory.createTitledBorder(
                 BorderFactory.createLineBorder(borderColor, 3),
                 "📖 Book Library",
@@ -98,7 +98,7 @@ public class LibraryGUI extends JFrame {
         JPanel statusPanel = new JPanel(new FlowLayout(FlowLayout.LEFT));
         statusPanel.setBackground(headerColor);
         statusLabel = new JLabel("Ready - Welcome to Library Management System");
-        statusLabel.setForeground(Color.WHITE);
+        statusLabel.setForeground(Color.BLACK);
         statusLabel.setFont(new Font("Arial", Font.PLAIN, 14));
         statusPanel.add(statusLabel);
         add(statusPanel, BorderLayout.PAGE_END);
@@ -117,7 +117,8 @@ public class LibraryGUI extends JFrame {
     }
 
     private void loadSampleData() {
-        Book ebook1 = new EBook("Java Programming", "John Doe", "ISBN001", 5.2, "PDF");
+
+        Book ebook1 = new EBook("Java Programming", "Lincoln", "ISBN001", 5.2, "PDF");
         Book printedBook1 = new PrintedBook("Data Structures", "Jane Smith", "ISBN002", 450, "Good");
         Book ebook2 = new EBook("Clean Code", "Robert Martin", "ISBN003", 3.8, "EPUB");
         Book printedBook2 = new PrintedBook("Design Patterns", "Gang of Four", "ISBN004", 395, "New");
@@ -126,8 +127,6 @@ public class LibraryGUI extends JFrame {
         libraryManager.addBook(printedBook1);
         libraryManager.addBook(ebook2);
         libraryManager.addBook(printedBook2);
-
-        updateStatus("Sample books loaded successfully");
     }
 
     private void refreshBookList() {
@@ -224,7 +223,6 @@ public class LibraryGUI extends JFrame {
     }
 
     public static void main(String[] args) {
-        // Set look and feel
         try {
             UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
         } catch (Exception e) {

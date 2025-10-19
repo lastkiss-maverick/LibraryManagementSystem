@@ -38,7 +38,6 @@ public class PrintedBook extends Book {
         System.out.println("Condition: " + condition);
     }
 
-    // NEW: Override for GUI detailed info
     @Override
     public String getDetailedInfo() {
         StringBuilder info = new StringBuilder();
